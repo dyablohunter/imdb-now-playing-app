@@ -62,7 +62,7 @@ var sortByRating = function(value){
     for (i = 0; i < items.length; i++) {
         var rating = items[i].getAttribute("rating");
 
-        if (rating >= value) {
+        if (rating >= parseInt(value)) {
             items[i].style.display = "";
         } else {
             items[i].style.display = "none";
