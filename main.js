@@ -60,9 +60,9 @@ var sortByRating = function(value){
     var items = document.getElementsByClassName("item");
     var i;
     for (i = 0; i < items.length; i++) {
-        var rating = items[i].getAttribute("rating");
+        var rating = parseFloat(items[i].getAttribute("rating"));
 
-        if (rating >= parseFloat(value).toFixed(1)) {
+        if (rating >= value) {
             items[i].style.display = "";
         } else {
             items[i].style.display = "none";
@@ -218,12 +218,16 @@ document.getElementById('filterResults').onclick = function(){
 // Function to remove error and reset items visibility
 var resetFilters = function() {
     document.getElementById('errorDiv').innerHTML = '';
+    sliderValue = 3;
+    slider.value = 3;
+    output.innerHTML = sliderValue;
     
     // remove filteredOut class from all items
     var items = document.getElementsByClassName('item');
     var i;
     for (i = 0; i < items.length; i++) {
         items[i].classList.remove("filteredOut");
+        items[i].style.display = "";
     }
     
     // uncheck all genre checkboxes
