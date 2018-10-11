@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IMDB Now Playing App</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" charset="utf-8" async="" src="main.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <span id="kiss-logo" title="K.I.S.S. (Keep It Short & Simple)" onclick="toggle()">&#128139;</span><h1>Now Playing</h1>
+        <!--<input type="search" placeholder="Filter by title ...">-->
+        <input type="range" min="0" max="10" value="3" step="0.5" class="slider" id="slider">
+        Rating: <b id="vote_average"></b>
+        <button id="toggleGenres" onclick="toggle()">Show Genres</button>
+        <button id="filterResults">Filter</button>
+    </header>
+    <form id="sidebar">
+    </form>
+    <content>
+        <div id="content">
+        </div>
+    </content>
+</body>
+</html>

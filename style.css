@@ -1,0 +1,144 @@
+/* 10.000 style sheets with this one.
+
+/* Quick reset of everything */
+
+* {margin: 0; padding: 0; line-height: 1; border: 0; outline: 0}
+
+body, html {height: 100%}
+body {background: #000; color: #ccc; font-family: 'Roboto', sans-serif; font-size: 14px; margin-top: 72px}
+h1,h2,h3,h4,h5 {font-family: 'Roboto', sans-serif;}
+
+/* Header */
+header {background: #333; padding: 20px; position: fixed; width: 100%; height: 32px; z-index: 9; top: 0}
+
+header input[type=search] {background: rgba(255,255,255,.5); border: 1px solid transparent; padding: 5px 10px; color: #fff; margin-left: 30px}
+header input[type=search]:focus {border-color: rgba(255,255,255,.5)}
+
+#kiss-logo {cursor: pointer; font-size: 28px; position: absolute; left: 20px; transition: all .2s}
+#kiss-logo:hover {font-size: 40px; transform: rotate(20deg)}
+#filterResults {background: #baf982}
+
+h1 {
+    display: inline-block;
+    font-size: 22px;
+    margin-left: 40px;
+    vertical-align: bottom;
+    box-sizing: border-box;
+    padding-bottom: 6px;
+}
+
+header button {padding: 10px 20px; margin-left: 20px; cursor: pointer; border-radius: 5px}
+header button:hover {background: #fff}
+
+
+#vote_average {
+    width: 20px;
+    display: inline-block;
+}
+
+/* Slider */
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    max-width: 200px;
+    height: 9px;
+    background: #666;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin-left: 10px
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #FFF;
+    cursor: pointer;
+    border-radius: 30px
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #FFF;
+    cursor: pointer;
+}
+
+/* Sidebar */
+
+#sidebar {
+    width: 0;
+    position: fixed;
+    z-index: 9;
+    overflow: hidden;
+    display: none;
+    opacity: .9;
+    float: left;
+    box-sizing: border-box;
+    background: #444;
+    height: calc(100% - 72px);
+    padding: 10px;
+    transition: all .2s
+}
+
+.sidebarVisible {width: 170px !important}
+
+#sidebar input {margin: 0 0 10px 0}
+#sidebar label {font-size: 14px; cursor: pointer; vertical-align: top}
+#sidebar label:hover, #sidebar input:checked + label {color: #fff}
+
+/* Content */
+
+content {
+    height: calc(100% - 72px);
+    float: left;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%
+}
+
+.item {width: 10%; float: left; position: relative; clear: right; margin-bottom: 20px;}
+
+content h1 {margin-bottom: 10px}
+
+.genres {
+    color: gray;
+    padding: 0 5px 0 0;
+    display: block;
+    font-size: 12px;
+    line-height: 1.4;
+    height: 40px
+}
+
+/* Style for movie items */
+.item i {font-weight: normal; display: inline-block; margin-right: 4px}
+.item i b:before {content:', '; display: inline-block}
+.item i:last-of-type b {display: none}
+
+.filteredByGenre {display: none !important}
+
+
+content img {
+    width: 100%;
+    display: block;
+    opacity: .6;
+    cursor: pointer
+}
+.item:hover > img {opacity: 1}
+
+
+.title {height: 36px; font-size: 14px; padding: 5px 15px 0 0; line-height: 1.4; font-weight: bold}
+.item:hover > .title {color: #fff}
+
+/* The specs of the app do not require it to be responsive but this is a minimal */
+@media screen and (max-width: 1550px) {
+    .item {width: 20%}
+}
