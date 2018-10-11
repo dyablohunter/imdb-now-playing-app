@@ -144,7 +144,7 @@ nowPlayingXHR.addEventListener("readystatechange", function () {
         });
     
         // Inserting each returned result into it's own .item container, this all goes into the #content div
-        content.insertAdjacentHTML('beforeend','<div class="item" popularity="'+item.popularity+'" genres="'+genreIDs+'" rating="'+item.vote_average+'"><img src="https://image.tmdb.org/t/p/w500/'+item.poster_path+'"><div class="title">'+item.title+'</div><div class="genres">'+genreNames+'</div></div>');
+        content.insertAdjacentHTML('beforeend','<div class="item" popularity="'+item.popularity+'" genres="'+genreIDs+'" rating="'+item.vote_average+'"><span class="rating" title="Rating">'+item.vote_average+'</span><img src="https://image.tmdb.org/t/p/w500/'+item.poster_path+'"><div class="title">'+item.title+'</div><div class="genres">'+genreNames+'</div></div>');
     });
         
     sortByRating(sliderValue);

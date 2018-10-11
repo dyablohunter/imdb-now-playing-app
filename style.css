@@ -62,7 +62,8 @@ header button:hover {background: #fff}
     height: 25px;
     background: #FFF;
     cursor: pointer;
-    border-radius: 30px
+    border-radius: 30px;
+    z-index: 999
 }
 
 .slider::-moz-range-thumb {
@@ -119,9 +120,11 @@ content h1 {margin-bottom: 10px}
 }
 
 /* Style for movie items */
-.item i {font-weight: normal; display: inline-block; margin-right: 4px}
+.item i {font-weight: normal; display: inline-block; margin-right: 4px; position: relative}
 .item i b:before {content:', '; display: inline-block}
 .item i:last-of-type b {display: none}
+
+.rating {font-size: 24px; position: absolute; right: 10px; top: 10px}
 
 .filteredByGenre {display: none !important}
 
