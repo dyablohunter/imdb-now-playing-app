@@ -95,7 +95,7 @@ header button:hover {background: #fff}
 
 #sidebar input {margin: 0 0 10px 0}
 #sidebar label {font-size: 14px; cursor: pointer; vertical-align: top}
-#sidebar label:hover, #sidebar input:checked + label {color: #fff}
+#sidebar label:hover, #sidebar input:checked + label {color: #baf982}
 
 /* Content */
 
