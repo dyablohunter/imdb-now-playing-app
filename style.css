@@ -138,7 +138,7 @@ content img {
 .item:hover > img {opacity: 1}
 
 
-.title {height: 36px; font-size: 14px; padding: 5px 15px 0 0; line-height: 1.4; font-weight: bold}
+.title {height: 36px; font-size: 14px; padding: 5px 15px 5px 0; line-height: 1.4; font-weight: bold}
 .item:hover > .title {color: #fff}
 
 /* The specs of the app do not require it to be responsive but this is a minimal */
