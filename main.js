@@ -48,7 +48,7 @@ output.innerHTML = slider.value; // Displaying the default value of the slider b
 
 // on each change of the slider input we update the text value displayed
 slider.oninput = function() {
-    sliderValue = parseInt(this.value);
+    sliderValue = this.value;
     output.innerHTML = sliderValue;
     sortByRating(sliderValue);
 }
