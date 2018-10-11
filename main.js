@@ -25,11 +25,11 @@ function toggle() {
     if (sidebar.style.display === "") {
         sidebar.style.display = "block";
         sidebar.classList.add("sidebarVisible");
-        toggleGenres.innerHTML = 'Hide Genres';
+        toggleGenres.innerHTML = '<i class="fas fa-eye-slash"></i> Hide Genres';
     } else {
         sidebar.style.display = "";
         sidebar.classList.remove("sidebarVisible");
-        toggleGenres.innerHTML = 'Show Genres';
+        toggleGenres.innerHTML = '<i class="fas fa-eye"></i> Show Genres';
     }
 }
 //>>>
@@ -175,32 +175,62 @@ function getCheckedInputs(form) {
 
 // Filtering results by checked genres, only when clicking on the Filter button of course
 // first we need to store our logic in a function that we can use on Filter button click but also on slider change
+
 var checkSelectedGenres = function(){
     var checked = getCheckedInputs(document.getElementById("sidebar")); // returns our array of genre IDs of each checked checkbox
-        checked.forEach(function (val) {
-            var items = document.getElementsByClassName('item');
-            var i;
-            for (i = 0; i < items.length; i++) {
-                var genres = items[i].getAttribute("genres");
+    
+    checked.forEach(function (val) {
+        var items = document.getElementsByClassName('item');
+        var i;
+        for (i = 0; i < items.length; i++) {
+            var genres = items[i].getAttribute("genres");
 
-                if ( checked.every(e => genres.includes(e)) ) {
-                    items[i].classList.remove("filteredByGenre");
-                } else {
-                    items[i].classList.add("filteredByGenre");
-                }
-            }
-        });
-        if (checkboxesArray.length == 0) {
-            let items = document.getElementsByClassName('item');
-            let i;
-            for (i = 0; i < items.length; i++) {
-                items[i].classList.remove("filteredByGenre");
+            if ( checked.every(e => genres.includes(e)) ) {
+                items[i].classList.remove("filteredOut");
+            } else {
+                items[i].classList.add("filteredOut");
             }
         }
-        document.getElementById('sidebar').style.display = "";
-        document.getElementById('toggleGenres').innerHTML = 'Show Genres';
+    });
+    if (checkboxesArray.length == 0) {
+        let items = document.getElementsByClassName('item');
+        let i;
+        for (i = 0; i < items.length; i++) {
+            items[i].classList.remove("filteredOut");
+        }
+    }
+    // Show an error if the number of filtered items is equal to all the items listed (meaning the checked genres combination filteres out all the items)
+    if (document.getElementsByClassName('item').length == document.getElementsByClassName('filteredOut').length) {
+        document.getElementById('errorDiv').innerHTML = '<div id="error">There are no results for that selection. <a href="#" id="reset" onclick="resetFilters();">Reset?</a></div>';
+    }
+    
+    // Hide sidebar when function is complete and return button to initial text
+    document.getElementById('sidebar').style.display = "";
+    document.getElementById('toggleGenres').innerHTML = '<i class="fas fa-eye"></i> Show Genres';
 }
+
+// Clicking the Filter button runs the checkSelectedGenres() function
 document.getElementById('filterResults').onclick = function(){
     checkSelectedGenres();
+}
+
+
+// Function to remove error and reset items visibility
+var resetFilters = function() {
+    document.getElementById('errorDiv').innerHTML = '';
+    
+    // remove filteredOut class from all items
+    var items = document.getElementsByClassName('item');
+    var i;
+    for (i = 0; i < items.length; i++) {
+        items[i].classList.remove("filteredOut");
+    }
+    
+    // uncheck all genre checkboxes
+    var uncheckGenres = document.getElementsByClassName('genreCheckbox');
+    var x;
+    for (x = 0; x < uncheckGenres.length; x++) {
+        uncheckGenres[x].checked = false;
+    }
 }
 //>>>

@@ -16,7 +16,7 @@ header input[type=search]:focus {border-color: rgba(255,255,255,.5)}
 
 #kiss-logo {cursor: pointer; font-size: 28px; position: absolute; left: 20px; transition: all .2s}
 #kiss-logo:hover {font-size: 40px; transform: rotate(20deg)}
-#filterResults {background: #baf982}
+
 
 h1 {
     display: inline-block;
@@ -29,7 +29,8 @@ h1 {
 
 header button {padding: 10px 20px; margin-left: 20px; cursor: pointer; border-radius: 5px}
 header button:hover {background: #fff}
-
+#filterResults {background: #baf982}
+#resetFilters {background: gray}
 
 #vote_average {
     width: 20px;
@@ -126,8 +127,10 @@ content h1 {margin-bottom: 10px}
 
 .rating {font-size: 24px; position: absolute; right: 10px; top: 10px}
 
-.filteredByGenre {display: none !important}
+.filteredOut {display: none !important}
 
+#error, #error a, #error a:visited {color: red; font-size: 18px}
+#reset {font-weight: bold}
 
 content img {
     width: 100%;
@@ -141,7 +144,7 @@ content img {
 .title {height: 36px; font-size: 14px; padding: 5px 15px 5px 0; line-height: 1.4; font-weight: bold}
 .item:hover > .title {color: #fff}
 
-/* The specs of the app do not require it to be responsive but this is a minimal */
+/* The initial specs of the app do not require it to be responsive but this is a minimal */
 @media screen and (max-width: 1550px) {
     .item {width: 20%}
 }

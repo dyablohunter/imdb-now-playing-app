@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" charset="utf-8" async="" src="main.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 <body>
     <header>
@@ -13,14 +14,16 @@
         <!--<input type="search" placeholder="Filter by title ...">-->
         <input type="range" min="0" max="10" value="3" step="0.5" class="slider" id="slider">
         Rating: <b id="vote_average"></b>
-        <button id="toggleGenres" onclick="toggle()">Show Genres</button>
-        <button id="filterResults">Filter</button>
+        <button id="toggleGenres" onclick="toggle()"><i class="fas fa-eye"></i> Show Genres</button>
+        <button id="filterResults"><i class="fas fa-check"></i> Filter</button>
+        <button id="resetFilters" onclick="resetFilters();"><i class="fas fa-redo"></i> RESET</button>
     </header>
     <form id="sidebar">
     </form>
     <content>
         <div id="content">
         </div>
+        <div id="errorDiv"></div>
     </content>
 </body>
 </html>
