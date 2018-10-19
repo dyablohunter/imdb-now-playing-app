@@ -104,10 +104,11 @@ content {
     float: left;
     padding: 20px;
     box-sizing: border-box;
-    width: 100%
+    width: 100%;
+    text-align: left;
 }
 
-.item {width: 10%; float: left; position: relative; clear: right; margin-bottom: 20px;}
+.item {width: 10%; display: inline-block; margin-bottom: 20px; vertical-align: top;}
 
 content h1 {margin-bottom: 10px}
 
