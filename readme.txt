@@ -15,8 +15,8 @@ The app is free to use and modify, no strings attached (just remember me when yo
 ** Quick rundown: **
 The API used are the following:
 
-TMDb Movies Now Playing API
-TMDb Movie genres API
+IMDb Movies Now Playing API
+IMDb Movie genres API
 
 ** Features: **
 - Simple HTML minimum rating slider with a range between 0 and 10, increments of 0.5 and a default set to 3.
